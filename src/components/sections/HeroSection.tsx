@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
-import { Badge } from "@/components/common/Badge";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { siteConfig } from "@/data/site";
 
@@ -11,13 +10,15 @@ export function HeroSection() {
     <section className="campaign-gradient relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden>
         <svg className="absolute right-0 top-12 h-[420px] w-[620px] text-[#1434A4]" viewBox="0 0 620 420" fill="none">
-          <path d="M20 310C118 238 190 344 286 248C384 150 474 244 590 72" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" opacity=".22" />
-          <path d="M90 72C170 138 250 86 326 146C404 208 480 168 560 248" stroke="currentColor" strokeWidth="2" strokeDasharray="8 10" opacity=".14" />
+          <path className="hero-drift-line" d="M20 310C118 238 190 344 286 248C384 150 474 244 590 72" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" opacity=".22" />
+          <path className="hero-drift-line-alt" d="M90 72C170 138 250 86 326 146C404 208 480 168 560 248" stroke="currentColor" strokeWidth="2" strokeDasharray="8 10" opacity=".14" />
         </svg>
       </div>
       <div className="container-page grid min-h-[calc(100vh-80px)] items-center gap-8 py-10 lg:grid-cols-[.92fr_1.08fr] lg:py-12">
         <div className="relative z-10">
-          <Badge className="border border-[#FFD84D]/45 bg-[#004EA2] text-white shadow-lg shadow-[#004EA2]/20">{siteConfig.party} · {siteConfig.electionName}</Badge>
+          <span className="inline-flex items-center rounded-full border border-[#FFD84D]/45 bg-[#004EA2] px-3 py-1 text-sm font-black text-white shadow-lg shadow-[#004EA2]/20">
+            {siteConfig.party} · {siteConfig.electionName}
+          </span>
           <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-[#0B1F66] md:text-6xl lg:text-7xl">
             <span className="block text-keep">{siteConfig.heroTitle}</span>
             <span className="mt-3 block text-[4.4rem] leading-none text-[#1434A4] md:text-[7rem]">유선경</span>
@@ -53,11 +54,11 @@ export function HeroSection() {
           <div className="relative overflow-hidden rounded-[2.75rem] border border-[#D7E4FF] bg-white/82 p-4 shadow-2xl backdrop-blur">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,216,77,.48),transparent_22%),radial-gradient(circle_at_24%_70%,rgba(29,78,216,.14),transparent_30%),linear-gradient(145deg,#FFFFFF_0%,#EAF2FF_56%,#F8FBFF_100%)]" aria-hidden />
             <svg className="pointer-events-none absolute inset-0 h-full w-full text-[#1434A4]/28" viewBox="0 0 560 680" fill="none" aria-hidden>
-              <path d="M48 122C134 74 226 116 294 80C384 32 458 96 524 48" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" />
-              <path d="M34 456C118 374 218 478 314 390C412 300 480 354 542 294" stroke="currentColor" strokeWidth="2" strokeDasharray="8 10" />
-              <path d="M86 594C158 548 250 574 330 520C408 468 462 482 526 438" stroke="currentColor" strokeWidth="7" opacity=".22" />
-              <circle cx="426" cy="150" r="76" fill="#FFD84D" opacity=".92" />
-              <circle cx="118" cy="520" r="94" fill="#1D4ED8" opacity=".08" />
+              <path className="hero-drift-line" d="M48 122C134 74 226 116 294 80C384 32 458 96 524 48" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" />
+              <path className="hero-drift-line-alt" d="M34 456C118 374 218 478 314 390C412 300 480 354 542 294" stroke="currentColor" strokeWidth="2" strokeDasharray="8 10" />
+              <path className="hero-drift-route" d="M86 594C158 548 250 574 330 520C408 468 462 482 526 438" stroke="currentColor" strokeWidth="7" opacity=".22" />
+              <circle className="hero-float-orb" cx="426" cy="150" r="76" fill="#FFD84D" opacity=".92" />
+              <circle className="hero-float-orb-alt" cx="118" cy="520" r="94" fill="#1D4ED8" opacity=".08" />
             </svg>
             <div className="absolute left-6 top-6 z-20 flex flex-wrap gap-2">
               {["이곡1동", "이곡2동", "신당동"].map((area) => (

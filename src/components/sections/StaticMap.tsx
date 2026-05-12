@@ -26,7 +26,8 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
     if (category === "이주민") return mapMarkers.filter((marker) => marker.category === "이주민");
     return mapMarkers.filter((marker) => marker.category === category);
   }, [category]);
-  const visibleMarkers = preview ? markers.slice(0, 6) : markers;
+  const visibleMarkers = markers;
+  const listHeightClass = preview ? "max-h-[520px]" : "max-h-[620px]";
 
   function handleCategoryChange(nextCategory: MapCategory) {
     setCategory(nextCategory);
@@ -56,61 +57,20 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
             </button>
           ))}
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[#F6F8FB]">
-          <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="서쪽 신당동, 중앙 이곡2동, 동쪽 이곡1동 순서로 표시한 성서 생활권 공약지도">
-            <rect width="760" height="460" fill="#F6F8FB" />
-            <g opacity=".92">
-              <rect x="42" y="42" width="120" height="70" rx="6" fill="#E9EEF5" />
-              <rect x="182" y="36" width="150" height="84" rx="6" fill="#EDF2F7" />
-              <rect x="354" y="44" width="138" height="76" rx="6" fill="#E9EEF5" />
-              <rect x="522" y="40" width="164" height="84" rx="6" fill="#E9EEF5" />
-              <rect x="54" y="142" width="110" height="78" rx="6" fill="#E8F3E8" />
-              <rect x="190" y="150" width="134" height="70" rx="6" fill="#F3ECE5" />
-              <rect x="354" y="150" width="146" height="72" rx="6" fill="#F3ECE5" />
-              <rect x="526" y="150" width="150" height="72" rx="6" fill="#EDF2F7" />
-              <rect x="58" y="252" width="150" height="88" rx="6" fill="#E9EEF5" />
-              <rect x="236" y="258" width="118" height="76" rx="6" fill="#F3ECE5" />
-              <rect x="384" y="252" width="136" height="88" rx="6" fill="#E8F3E8" />
-              <rect x="552" y="250" width="136" height="92" rx="6" fill="#E9EEF5" />
-            </g>
-            <g stroke="#FFFFFF" strokeWidth="12" strokeLinecap="round">
-              <path d="M20 132H740" />
-              <path d="M20 238H740" />
-              <path d="M20 360H740" />
-              <path d="M176 20V430" />
-              <path d="M340 20V430" />
-              <path d="M514 20V430" />
-              <path d="M674 20V430" />
-              <path d="M92 26C114 96 78 136 114 206C154 284 116 340 144 430" />
-              <path d="M426 28C406 92 448 138 418 210C384 292 432 348 408 430" />
-            </g>
-            <g stroke="#D6DEE8" strokeWidth="2" opacity=".85">
-              {Array.from({ length: 7 }).map((_, index) => (
-                <path key={`h-${index}`} d={`M38 ${72 + index * 50}H714`} />
-              ))}
-              {Array.from({ length: 9 }).map((_, index) => (
-                <path key={`v-${index}`} d={`M${70 + index * 76} 30V420`} />
-              ))}
-            </g>
-            <path d="M-20 312C120 284 226 288 342 296C454 304 580 310 782 286" stroke="#F7DE7B" strokeWidth="30" strokeLinecap="round" />
-            <path d="M-20 312C120 284 226 288 342 296C454 304 580 310 782 286" stroke="#22A06B" strokeWidth="5" strokeLinecap="round" />
-            <g fill="#0B1F66" fontWeight="900">
-              <text x="112" y="204" fontSize="22">신당동</text>
-              <text x="350" y="250" fontSize="22">이곡2동</text>
-              <text x="584" y="196" fontSize="22">이곡1동</text>
-            </g>
-            <g>
-              <rect x="244" y="274" width="106" height="30" rx="15" fill="#FFFFFF" stroke="#22A06B" strokeWidth="2" />
-              <text x="266" y="295" fill="#0F766E" fontSize="14" fontWeight="900">성서산업단지역</text>
-              <rect x="440" y="282" width="64" height="30" rx="15" fill="#FFFFFF" stroke="#22A06B" strokeWidth="2" />
-              <text x="458" y="303" fill="#0F766E" fontSize="14" fontWeight="900">이곡역</text>
-            </g>
-            <g fill="#1434A4" fontSize="13" fontWeight="800" opacity=".72">
-              <text x="28" y="438">서쪽</text>
-              <text x="698" y="438">동쪽</text>
-              <path d="M68 434H154" stroke="#1434A4" strokeWidth="2" />
-              <path d="M678 434H592" stroke="#1434A4" strokeWidth="2" />
-            </g>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] border border-[#D7E4FF] bg-[#F7FAFF]">
+          <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="신당동, 이곡2동, 이곡1동을 생활권 도형과 공약 핀으로 표시한 성서 공약지도">
+            <defs>
+              <filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="16" stdDeviation="18" floodColor="#0B1F66" floodOpacity=".12" />
+              </filter>
+            </defs>
+            <rect width="760" height="460" fill="#F7FAFF" />
+            <circle cx="96" cy="76" r="118" fill="#FFD84D" opacity=".18" />
+            <circle cx="656" cy="382" r="134" fill="#1D4ED8" opacity=".10" />
+            <path d="M66 322C188 292 290 310 392 300C514 288 606 246 724 266" stroke="#2FBF71" strokeWidth="18" strokeLinecap="round" opacity=".42" />
+            <path d="M54 124C112 88 188 86 246 122C286 146 292 226 252 264C196 316 104 294 60 244C24 202 16 148 54 124Z" fill="#EAF2FF" stroke="#8FB7F1" strokeWidth="2.5" filter="url(#mapShadow)" />
+            <path d="M276 102C346 78 440 82 492 136C536 182 512 256 454 284C382 318 292 284 260 226C232 176 232 118 276 102Z" fill="#FFF7D6" stroke="#E8CA51" strokeWidth="2.5" filter="url(#mapShadow)" />
+            <path d="M516 120C582 72 672 88 714 154C752 214 720 292 646 318C568 346 496 302 482 232C472 180 486 142 516 120Z" fill="#E8F5EF" stroke="#89C9B4" strokeWidth="2.5" filter="url(#mapShadow)" />
           </svg>
           {visibleMarkers.map((marker) => (
             <button
@@ -122,11 +82,30 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
               title={`${marker.title}: ${marker.pledge}`}
               aria-label={`${marker.title} 공약 보기`}
             >
-              <span className={cn("flex h-7 w-7 items-center justify-center rounded-full border-4 shadow-lg transition", selected.title === marker.title ? "scale-125 border-[#FFD84D]" : "border-white", categoryColor[marker.category], marker.category === "아동" ? "text-[#0B1F66]" : "text-white")}>
-                <span className="h-2 w-2 rounded-full bg-current" />
+              <span className={cn("flex h-8 w-8 items-center justify-center rounded-full border-4 shadow-lg transition hover:scale-110", selected.title === marker.title ? "scale-125 border-[#FFD84D] ring-4 ring-white/80" : "border-white", categoryColor[marker.category], marker.category === "아동" ? "text-[#0B1F66]" : "text-white")}>
+                <span className="h-2.5 w-2.5 rounded-full bg-current" />
               </span>
+              <span className="sr-only">{marker.title}</span>
             </button>
           ))}
+          <div className="absolute left-4 top-4 rounded-2xl bg-white/88 px-4 py-3 shadow-lg backdrop-blur">
+            <p className="text-xs font-black text-[#1434A4]">성서 생활권</p>
+            <p className="mt-1 text-sm font-black text-[#0B1F66]">선·도형·핀으로 보는 공약 흐름</p>
+          </div>
+          <div className="pointer-events-none absolute inset-0 z-10" aria-hidden>
+            <div className="absolute left-[16.8%] top-[39%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
+              <p className="text-xl font-black text-[#0B1F66]">신당동</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">산단·계명대·공존</p>
+            </div>
+            <div className="absolute left-[50.3%] top-[39%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
+              <p className="text-xl font-black text-[#0B1F66]">이곡2동</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">역세권·공공부지</p>
+            </div>
+            <div className="absolute left-[80.5%] top-[41%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
+              <p className="text-xl font-black text-[#0B1F66]">이곡1동</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">행정·교육·아동</p>
+            </div>
+          </div>
         </div>
         <div className="mt-4 rounded-2xl border border-[#D7E4FF] bg-white p-5">
           <p className="text-xs font-black text-[#1434A4]">{selected.category} · {selected.area}</p>
@@ -136,7 +115,7 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
         </div>
         <p className="mt-4 text-sm leading-6 text-[#667085]">정확한 행정경계보다 성서 생활권의 핵심 현안과 공약 흐름을 한눈에 이해할 수 있도록 정리했습니다.</p>
       </div>
-      <div className="grid max-h-[620px] gap-3 overflow-auto pr-1">
+      <div className={cn("grid gap-3 overflow-auto pr-1", listHeightClass)}>
         {visibleMarkers.map((marker) => <MarkerCard key={marker.title} marker={marker} />)}
       </div>
     </div>

@@ -48,6 +48,12 @@ img { max-width: 100%; }
 .motion-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(11,31,102,.14); border-color: #B9D2FF; }
 .reveal-motion { opacity: 0; transform: translateY(28px) scale(.985); filter: blur(6px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .7s ease; will-change: opacity, transform, filter; }
 .reveal-motion.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+.hero-drift-line, .hero-drift-line-alt, .hero-drift-route, .hero-float-orb, .hero-float-orb-alt { transform-box: fill-box; transform-origin: center; will-change: transform, stroke-dashoffset; }
+.hero-drift-line { animation: hero-drift-line 8.5s ease-in-out infinite; }
+.hero-drift-line-alt { animation: hero-drift-line-alt 10s ease-in-out infinite; }
+.hero-drift-route { animation: hero-drift-route 9s ease-in-out infinite; }
+.hero-float-orb { animation: hero-float-orb 7.5s ease-in-out infinite; }
+.hero-float-orb-alt { animation: hero-float-orb-alt 9.5s ease-in-out infinite; }
 
 @supports (animation-timeline: view()) {
   main > section:not(:first-child) {
@@ -62,10 +68,35 @@ img { max-width: 100%; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes hero-drift-line {
+  0%, 100% { transform: translate3d(0, 0, 0); stroke-dashoffset: 0; }
+  50% { transform: translate3d(7px, -5px, 0); stroke-dashoffset: 18; }
+}
+
+@keyframes hero-drift-line-alt {
+  0%, 100% { transform: translate3d(0, 0, 0); stroke-dashoffset: 0; }
+  50% { transform: translate3d(-6px, 5px, 0); stroke-dashoffset: -14; }
+}
+
+@keyframes hero-drift-route {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(5px, -3px, 0); }
+}
+
+@keyframes hero-float-orb {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4px, -6px, 0) scale(1.02); }
+}
+
+@keyframes hero-float-orb-alt {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-5px, 4px, 0) scale(1.025); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   main > section:not(:first-child) { animation: none; }
-  .reveal-motion, .reveal-motion.is-visible, .motion-card, .motion-card:hover, .btn-base, .btn-base:hover { opacity: 1; filter: none; transform: none; transition: none; }
+  .reveal-motion, .reveal-motion.is-visible, .motion-card, .motion-card:hover, .btn-base, .btn-base:hover, .hero-drift-line, .hero-drift-line-alt, .hero-drift-route, .hero-float-orb, .hero-float-orb-alt { opacity: 1; filter: none; transform: none; transition: none; animation: none; }
 }
 
 @media (max-width: 768px) {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PledgeCard } from "@/components/cards/PledgeCard";
 import { Container } from "@/components/common/Container";
 import { SectionTitle } from "@/components/common/SectionTitle";
-import { ImageWithFallback } from "@/components/common/ImageWithFallback";
+import { CandidateVisualFrame } from "@/components/common/CandidateVisualFrame";
 import { CTASection } from "@/components/common/CTASection";
 import { agendaThemes, agendas } from "@/data/agendas";
 import { siteConfig } from "@/data/site";
@@ -19,9 +19,12 @@ export default function PledgesPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_.7fr] lg:items-center">
             <SectionTitle eyebrow="성서를 위한 5대 의제" title="환경, 공간, 이동권, 공존, 아이의 미래까지" description="유선경은 성서의 오래된 숙제를 생활 속에서 풀겠습니다." />
-            <div className="rounded-[2rem] bg-gradient-to-br from-[#0B1F66] to-[#1D4ED8] p-4 shadow-xl">
-              <ImageWithFallback src={siteConfig.images.heroCutout} alt="달서구의원 후보 유선경 공식 프로필 사진" className="rounded-[1.5rem]" sizes="(min-width: 1024px) 380px, 100vw" preset="cutout" withDefaultBg={false} />
-            </div>
+            <CandidateVisualFrame
+              src={siteConfig.images.heroCutout}
+              alt="달서구의원 후보 유선경 공식 프로필 사진"
+              className="lg:aspect-[4/5]"
+              sizes="(min-width: 1024px) 380px, 100vw"
+            />
           </div>
         </Container>
       </section>

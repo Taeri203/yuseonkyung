@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export function FeatureCard({ title, description, icon: Icon, compact = false }: { title: string; description: string; icon: LucideIcon; compact?: boolean }) {
   return (
-    <article className={cn("motion-card surface-panel flex items-start gap-4 rounded-[1.25rem] p-4", !compact && "md:block md:rounded-[1.5rem] md:p-6", compact && "h-full")}>
+    <article className={cn("motion-card surface-panel flex h-full items-start gap-4 rounded-[1.25rem] p-4", !compact && "md:block md:rounded-[1.5rem] md:p-6")}>
       <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#EAF2FF] text-[#1434A4]", !compact && "md:h-12 md:w-12")}>
         <Icon className={cn("h-5 w-5", !compact && "md:h-6 md:w-6")} aria-hidden />
       </div>
