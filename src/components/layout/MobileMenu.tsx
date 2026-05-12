@@ -22,9 +22,9 @@ export function MobileMenu() {
         메뉴
       </button>
       {open ? (
-        <div className="fixed inset-0 z-50 bg-[#0B1F66]/45 p-3 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
-          <div className="ml-auto flex h-full max-w-[390px] flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl">
-            <div className="blue-gradient relative overflow-hidden p-5 text-white">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0B1F66]/58 p-3 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
+          <div className="mx-auto flex min-h-[calc(100vh-24px)] max-w-[390px] flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#1434A4] via-[#1D4ED8] to-[#EAF2FF] p-5 text-white">
               <div className="pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full bg-[#FFD84D]/35 blur-2xl" aria-hidden />
               <div className="relative flex items-start justify-between gap-3">
                 <div>
@@ -41,7 +41,7 @@ export function MobileMenu() {
                 <p className="text-sm font-bold leading-6 text-blue-50">이곡1동·이곡2동·신당동의 생활 문제를 공약과 실행으로 연결하겠습니다.</p>
               </div>
             </div>
-            <nav className="grid flex-1 content-start gap-4 overflow-auto p-4">
+            <nav className="grid content-start gap-4 p-4">
               {groupedNav.map((group) => (
                 <section key={group.title} aria-label={`${group.title} 메뉴`}>
                   <h2 className="mb-2 px-1 text-xs font-black tracking-[0.18em] text-[#1434A4]">{group.title}</h2>
@@ -56,11 +56,11 @@ export function MobileMenu() {
                 </section>
               ))}
             </nav>
-            <div className="grid grid-cols-2 gap-2 border-t border-[#E5E7EB] p-4">
+            <div className="mt-auto grid grid-cols-2 gap-2 border-t border-[#E5E7EB] p-4">
               <Link href="/voice" onClick={() => setOpen(false)} className="btn-base btn-primary btn-small">의견 남기기</Link>
               <Link href="/donation" onClick={() => setOpen(false)} className="btn-base btn-yellow btn-small">후원 안내</Link>
             </div>
-        </div>
+          </div>
         </div>
       ) : null}
     </div>

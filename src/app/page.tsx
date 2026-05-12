@@ -51,7 +51,7 @@ export default function Home() {
           <ScrollReveal>
             <SectionTitle eyebrow="성서 생활 의제" title="성서의 문제는 생활 속에 있습니다" description="환경, 공간, 이동권, 공존, 아이의 미래까지 주민이 매일 마주하는 문제에서 공약을 시작합니다." />
             <div className="mt-6 grid gap-3 md:mt-9 md:grid-cols-2 md:gap-5 lg:grid-cols-5">
-              {problems.map((card, index) => <ScrollReveal key={card.title} delay={index * 60}><FeatureCard {...card} /></ScrollReveal>)}
+              {problems.map((card, index) => <ScrollReveal key={card.title} delay={index * 60}><FeatureCard {...card} compact /></ScrollReveal>)}
             </div>
           </ScrollReveal>
         </Container>
@@ -81,11 +81,11 @@ export default function Home() {
               description="미세먼지, 악취, 보행불편, 돌봄과 청년의 문제까지. 유선경은 주민이 겪는 불편을 현장에서 듣고, 의회에서 끝까지 묻겠습니다."
               imageTone="blue"
             />
-            <div className="mt-8 grid gap-3 md:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
               {actionSteps.map((step, index) => (
-                <div key={step} className="rounded-2xl bg-white p-5 shadow-sm">
-                  <p className="text-sm font-black text-[#1434A4]">0{index + 1}</p>
-                  <p className="mt-2 text-lg font-black text-[#0B1F66]">{step}</p>
+                <div key={step} className="rounded-2xl bg-white p-4 shadow-sm">
+                  <p className="text-xs font-black text-[#1434A4]">0{index + 1}</p>
+                  <p className="mt-1 text-base font-black leading-6 text-[#0B1F66] md:text-lg">{step}</p>
                 </div>
               ))}
             </div>

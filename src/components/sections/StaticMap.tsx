@@ -56,17 +56,61 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
             </button>
           ))}
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-[#EAF2FF] soft-grid">
-          <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" role="img" aria-label="이곡1동, 이곡2동, 신당동 핵심 현안을 표시한 추상 공약지도">
-            <path d="M32 72 C88 22 154 35 200 74 C244 112 315 85 360 130 C394 164 358 242 286 254 C220 266 178 232 126 250 C72 269 20 221 34 166 C44 125 12 105 32 72Z" fill="#fff" stroke="#B9D2FF" strokeWidth="4" />
-            <path d="M82 64 C110 120 112 176 96 244" stroke="#1434A4" strokeWidth="3" strokeDasharray="8 8" fill="none" opacity=".45" />
-            <path d="M176 48 C162 108 171 184 202 250" stroke="#1434A4" strokeWidth="3" strokeDasharray="8 8" fill="none" opacity=".45" />
-            <path d="M260 64 C282 122 296 180 322 236" stroke="#1434A4" strokeWidth="3" strokeDasharray="8 8" fill="none" opacity=".45" />
-            <path d="M54 190 C130 165 230 162 350 180" stroke="#1D4ED8" strokeWidth="7" fill="none" opacity=".28" />
-            <path d="M64 205 C140 180 230 178 344 194" stroke="#1D4ED8" strokeWidth="3" fill="none" opacity=".55" />
-            <text x="72" y="132" fill="#0B1F66" fontSize="18" fontWeight="900">이곡1동</text>
-            <text x="167" y="142" fill="#0B1F66" fontSize="18" fontWeight="900">이곡2동</text>
-            <text x="268" y="142" fill="#0B1F66" fontSize="18" fontWeight="900">신당동</text>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[#F6F8FB]">
+          <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="서쪽 신당동, 중앙 이곡2동, 동쪽 이곡1동 순서로 표시한 성서 생활권 공약지도">
+            <rect width="760" height="460" fill="#F6F8FB" />
+            <g opacity=".92">
+              <rect x="42" y="42" width="120" height="70" rx="6" fill="#E9EEF5" />
+              <rect x="182" y="36" width="150" height="84" rx="6" fill="#EDF2F7" />
+              <rect x="354" y="44" width="138" height="76" rx="6" fill="#E9EEF5" />
+              <rect x="522" y="40" width="164" height="84" rx="6" fill="#E9EEF5" />
+              <rect x="54" y="142" width="110" height="78" rx="6" fill="#E8F3E8" />
+              <rect x="190" y="150" width="134" height="70" rx="6" fill="#F3ECE5" />
+              <rect x="354" y="150" width="146" height="72" rx="6" fill="#F3ECE5" />
+              <rect x="526" y="150" width="150" height="72" rx="6" fill="#EDF2F7" />
+              <rect x="58" y="252" width="150" height="88" rx="6" fill="#E9EEF5" />
+              <rect x="236" y="258" width="118" height="76" rx="6" fill="#F3ECE5" />
+              <rect x="384" y="252" width="136" height="88" rx="6" fill="#E8F3E8" />
+              <rect x="552" y="250" width="136" height="92" rx="6" fill="#E9EEF5" />
+            </g>
+            <g stroke="#FFFFFF" strokeWidth="12" strokeLinecap="round">
+              <path d="M20 132H740" />
+              <path d="M20 238H740" />
+              <path d="M20 360H740" />
+              <path d="M176 20V430" />
+              <path d="M340 20V430" />
+              <path d="M514 20V430" />
+              <path d="M674 20V430" />
+              <path d="M92 26C114 96 78 136 114 206C154 284 116 340 144 430" />
+              <path d="M426 28C406 92 448 138 418 210C384 292 432 348 408 430" />
+            </g>
+            <g stroke="#D6DEE8" strokeWidth="2" opacity=".85">
+              {Array.from({ length: 7 }).map((_, index) => (
+                <path key={`h-${index}`} d={`M38 ${72 + index * 50}H714`} />
+              ))}
+              {Array.from({ length: 9 }).map((_, index) => (
+                <path key={`v-${index}`} d={`M${70 + index * 76} 30V420`} />
+              ))}
+            </g>
+            <path d="M-20 312C120 284 226 288 342 296C454 304 580 310 782 286" stroke="#F7DE7B" strokeWidth="30" strokeLinecap="round" />
+            <path d="M-20 312C120 284 226 288 342 296C454 304 580 310 782 286" stroke="#22A06B" strokeWidth="5" strokeLinecap="round" />
+            <g fill="#0B1F66" fontWeight="900">
+              <text x="112" y="204" fontSize="22">신당동</text>
+              <text x="350" y="250" fontSize="22">이곡2동</text>
+              <text x="584" y="196" fontSize="22">이곡1동</text>
+            </g>
+            <g>
+              <rect x="244" y="274" width="106" height="30" rx="15" fill="#FFFFFF" stroke="#22A06B" strokeWidth="2" />
+              <text x="266" y="295" fill="#0F766E" fontSize="14" fontWeight="900">성서산업단지역</text>
+              <rect x="440" y="282" width="64" height="30" rx="15" fill="#FFFFFF" stroke="#22A06B" strokeWidth="2" />
+              <text x="458" y="303" fill="#0F766E" fontSize="14" fontWeight="900">이곡역</text>
+            </g>
+            <g fill="#1434A4" fontSize="13" fontWeight="800" opacity=".72">
+              <text x="28" y="438">서쪽</text>
+              <text x="698" y="438">동쪽</text>
+              <path d="M68 434H154" stroke="#1434A4" strokeWidth="2" />
+              <path d="M678 434H592" stroke="#1434A4" strokeWidth="2" />
+            </g>
           </svg>
           {visibleMarkers.map((marker) => (
             <button

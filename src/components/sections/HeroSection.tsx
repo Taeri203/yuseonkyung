@@ -17,7 +17,7 @@ export function HeroSection() {
       </div>
       <div className="container-page grid min-h-[calc(100vh-80px)] items-center gap-8 py-10 lg:grid-cols-[.92fr_1.08fr] lg:py-12">
         <div className="relative z-10">
-          <Badge className="bg-[#0B1F66] text-white">{siteConfig.party} · {siteConfig.electionName}</Badge>
+          <Badge className="border border-[#FFD84D]/45 bg-[#004EA2] text-white shadow-lg shadow-[#004EA2]/20">{siteConfig.party} · {siteConfig.electionName}</Badge>
           <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-[#0B1F66] md:text-6xl lg:text-7xl">
             <span className="block text-keep">{siteConfig.heroTitle}</span>
             <span className="mt-3 block text-[4.4rem] leading-none text-[#1434A4] md:text-[7rem]">유선경</span>
@@ -49,15 +49,15 @@ export function HeroSection() {
           </div>
         </div>
         <div className="relative z-10 mx-auto w-full max-w-[590px]">
-          <div className="absolute -inset-8 rounded-[3.2rem] bg-[#1434A4]/18 blur-3xl" aria-hidden />
-          <div className="relative overflow-hidden rounded-[2.75rem] border border-white/70 bg-[#0B1F66] p-4 shadow-2xl">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,216,77,.55),transparent_22%),radial-gradient(circle_at_24%_70%,rgba(234,242,255,.28),transparent_30%),linear-gradient(145deg,#0B1F66_0%,#1434A4_54%,#1D4ED8_100%)]" aria-hidden />
-            <svg className="pointer-events-none absolute inset-0 h-full w-full text-white/35" viewBox="0 0 560 680" fill="none" aria-hidden>
+          <div className="absolute -inset-8 rounded-[3.2rem] bg-[#1D4ED8]/12 blur-3xl" aria-hidden />
+          <div className="relative overflow-hidden rounded-[2.75rem] border border-[#D7E4FF] bg-white/82 p-4 shadow-2xl backdrop-blur">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,216,77,.48),transparent_22%),radial-gradient(circle_at_24%_70%,rgba(29,78,216,.14),transparent_30%),linear-gradient(145deg,#FFFFFF_0%,#EAF2FF_56%,#F8FBFF_100%)]" aria-hidden />
+            <svg className="pointer-events-none absolute inset-0 h-full w-full text-[#1434A4]/28" viewBox="0 0 560 680" fill="none" aria-hidden>
               <path d="M48 122C134 74 226 116 294 80C384 32 458 96 524 48" stroke="currentColor" strokeWidth="2" strokeDasharray="10 12" />
               <path d="M34 456C118 374 218 478 314 390C412 300 480 354 542 294" stroke="currentColor" strokeWidth="2" strokeDasharray="8 10" />
               <path d="M86 594C158 548 250 574 330 520C408 468 462 482 526 438" stroke="currentColor" strokeWidth="7" opacity=".22" />
               <circle cx="426" cy="150" r="76" fill="#FFD84D" opacity=".92" />
-              <circle cx="118" cy="520" r="94" fill="#EAF2FF" opacity=".18" />
+              <circle cx="118" cy="520" r="94" fill="#1D4ED8" opacity=".08" />
             </svg>
             <div className="absolute left-6 top-6 z-20 flex flex-wrap gap-2">
               {["이곡1동", "이곡2동", "신당동"].map((area) => (
@@ -67,7 +67,7 @@ export function HeroSection() {
                 </span>
               ))}
             </div>
-            <div className="absolute right-5 top-24 z-20 rounded-2xl bg-white/92 px-4 py-3 text-right shadow-xl backdrop-blur">
+            <div className="absolute right-5 top-24 z-20 rounded-2xl bg-white/86 px-4 py-3 text-right shadow-xl backdrop-blur">
               <p className="text-xs font-black text-[#1434A4]">성서 생활정치</p>
               <p className="mt-1 text-2xl font-black text-[#0B1F66]">젊은 엔진</p>
             </div>
@@ -75,7 +75,7 @@ export function HeroSection() {
               src={siteConfig.images.heroCutout}
               alt="달서구의원 후보 유선경 공식 프로필 사진"
               className="relative z-10 h-[540px] rounded-[2.25rem] bg-transparent md:h-[700px]"
-              imgClassName="object-contain object-bottom drop-shadow-[0_28px_36px_rgba(0,0,0,0.28)]"
+              imgClassName="object-contain object-bottom drop-shadow-[0_24px_32px_rgba(11,31,102,0.22)]"
               sizes="(min-width: 1024px) 560px, 100vw"
               preset="cutout"
               withDefaultBg={false}
