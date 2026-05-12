@@ -58,7 +58,7 @@ export function MobileMenu() {
         </nav>
 
         <div className="grid shrink-0 grid-cols-2 gap-2 border-t border-[#E5E7EB] p-4">
-          <Link href="/voice" onClick={() => setOpen(false)} className="rounded-full bg-[#1434A4] px-4 py-3 text-center text-sm font-black text-white">
+          <Link href="/voice" onClick={() => setOpen(false)} className="rounded-full bg-[#1434A4] px-4 py-3 text-center text-sm font-black !text-white">
             의견 남기기
           </Link>
           <Link href="/donation" onClick={() => setOpen(false)} className="rounded-full bg-[#FFD84D] px-4 py-3 text-center text-sm font-black text-[#0B1F66]">

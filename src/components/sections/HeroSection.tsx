@@ -68,10 +68,6 @@ export function HeroSection() {
                 </span>
               ))}
             </div>
-            <div className="absolute right-4 top-20 z-20 rounded-2xl bg-white/86 px-3 py-2 text-right shadow-xl backdrop-blur md:right-5 md:top-24 md:px-4 md:py-3">
-              <p className="text-xs font-black text-[#1434A4]">성서 생활정치</p>
-              <p className="mt-1 text-xl font-black text-[#0B1F66] md:text-2xl">젊은 엔진</p>
-            </div>
             <ImageWithFallback
               src={siteConfig.images.heroCutout}
               alt="달서구의원 후보 유선경 공식 프로필 사진"

@@ -4,7 +4,7 @@ export const siteConfig = {
   siteName: "유선경.kr",
   candidateName: "유선경",
   party: "더불어민주당",
-  electionName: "달서구의원선거 나 선거구 후보",
+  electionName: "달서구의원선거 다 선거구 후보",
   area: "이곡1동·이곡2동·신당동",
   regionName: "성서",
   slogan: "공감과 실력, 당당한 달서",
@@ -39,5 +39,5 @@ export const navItems: NavItem[] = [
 
 export const defaultSeo = {
   title: "유선경.kr | 공감과 실력, 당당한 달서",
-  description: "더불어민주당 유선경 달서구의원선거 나 선거구 후보의 성서 5대 의제, 이곡1동·이곡2동·신당동 생활공약, 후원 안내와 유권자의 소리를 확인하세요.",
+  description: "더불어민주당 유선경 달서구의원선거 다 선거구 후보의 성서 5대 의제, 이곡1동·이곡2동·신당동 생활공약, 후원 안내와 유권자의 소리를 확인하세요.",
 };
