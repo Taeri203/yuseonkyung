@@ -57,7 +57,7 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
             </button>
           ))}
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] border border-[#D7E4FF] bg-[#F7FAFF]">
+        <div className="relative aspect-[16/11] overflow-hidden rounded-[1.5rem] border border-[#D7E4FF] bg-[#F7FAFF] md:aspect-[16/10]">
           <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="신당동, 이곡2동, 이곡1동을 생활권 도형과 공약 핀으로 표시한 성서 공약지도">
             <defs>
               <filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%">
@@ -82,17 +82,17 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
               title={`${marker.title}: ${marker.pledge}`}
               aria-label={`${marker.title} 공약 보기`}
             >
-              <span className={cn("flex h-8 w-8 items-center justify-center rounded-full border-4 shadow-lg transition hover:scale-110", selected.title === marker.title ? "scale-125 border-[#FFD84D] ring-4 ring-white/80" : "border-white", categoryColor[marker.category], marker.category === "아동" ? "text-[#0B1F66]" : "text-white")}>
-                <span className="h-2.5 w-2.5 rounded-full bg-current" />
+              <span className={cn("flex h-6 w-6 items-center justify-center rounded-full border-[3px] shadow-lg transition hover:scale-110 md:h-8 md:w-8 md:border-4", selected.title === marker.title ? "scale-125 border-[#FFD84D] ring-4 ring-white/80" : "border-white", categoryColor[marker.category], marker.category === "아동" ? "text-[#0B1F66]" : "text-white")}>
+                <span className="h-2 w-2 rounded-full bg-current md:h-2.5 md:w-2.5" />
               </span>
               <span className="sr-only">{marker.title}</span>
             </button>
           ))}
-          <div className="absolute left-4 top-4 rounded-2xl bg-white/88 px-4 py-3 shadow-lg backdrop-blur">
+          <div className="absolute left-4 top-4 hidden rounded-2xl bg-white/88 px-4 py-3 shadow-lg backdrop-blur md:block">
             <p className="text-xs font-black text-[#1434A4]">성서 생활권</p>
             <p className="mt-1 text-sm font-black text-[#0B1F66]">선·도형·핀으로 보는 공약 흐름</p>
           </div>
-          <div className="pointer-events-none absolute inset-0 z-10" aria-hidden>
+          <div className="pointer-events-none absolute inset-0 z-10 hidden md:block" aria-hidden>
             <div className="absolute left-[16.8%] top-[39%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
               <p className="text-xl font-black text-[#0B1F66]">신당동</p>
               <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">산단·계명대·공존</p>
@@ -106,6 +106,18 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
               <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">행정·교육·아동</p>
             </div>
           </div>
+        </div>
+        <div className="mt-3 grid grid-cols-3 gap-2 md:hidden" aria-label="성서 생활권 범례">
+          {[
+            ["신당동", "산단·계명대"],
+            ["이곡2동", "역세권·공공부지"],
+            ["이곡1동", "행정·교육"],
+          ].map(([name, detail]) => (
+            <div key={name} className="rounded-2xl border border-[#D7E4FF] bg-white px-2.5 py-2 text-center shadow-sm">
+              <p className="text-sm font-black text-[#0B1F66]">{name}</p>
+              <p className="mt-0.5 text-[10px] font-bold leading-4 text-[#667085]">{detail}</p>
+            </div>
+          ))}
         </div>
         <div className="mt-4 rounded-2xl border border-[#D7E4FF] bg-white p-5">
           <p className="text-xs font-black text-[#1434A4]">{selected.category} · {selected.area}</p>
