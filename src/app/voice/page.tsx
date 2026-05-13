@@ -34,7 +34,7 @@ export default function VoicePage() {
                   <p className="mt-2 text-sm leading-6 text-[#667085]">{faq.answer}</p>
                 </article>
               ))}
-              <SourceNoteBox>현재 페이지는 API 연결 없이 프론트엔드 폼만 구현되어 있으며, 제출 시 서버 전송 없이 성공 안내를 표시합니다.</SourceNoteBox>
+              <SourceNoteBox>제출하신 의견은 선거사무소 담당자 이메일로 전달됩니다. 반복 제출이나 자동 제출로 의심되는 요청은 제한될 수 있습니다.</SourceNoteBox>
             </aside>
             <VoiceForm />
           </div>
