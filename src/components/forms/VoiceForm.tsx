@@ -14,7 +14,8 @@ export function VoiceForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
     const required = ["name", "phone", "residence", "field", "title", "content", "privacy"];
     const missing = required.some((key) => !String(formData.get(key) || "").trim());
 
@@ -58,7 +59,7 @@ export function VoiceForm() {
       }
 
       setOpen(true);
-      event.currentTarget.reset();
+      formElement.reset();
     } catch (err) {
       setError(err instanceof Error ? err.message : "의견 접수 중 오류가 발생했습니다.");
     } finally {
