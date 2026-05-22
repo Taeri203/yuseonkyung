@@ -22,7 +22,7 @@ const identityCards = [
 
 const problems = [
   { title: "환경", description: "성서소각장, 방천매립장 악취", icon: Leaf },
-  { title: "공공부지", description: "호산중학교 부지, 달서구청 2청사 부지", icon: Map },
+  { title: "공공부지", description: "호산중학교 부지, 유휴 공공부지 활용", icon: Map },
   { title: "보행약자", description: "장애인·노약자·아동 이동권", icon: HandHeart },
   { title: "공존", description: "이주민과 정주민의 사회통합", icon: UsersRound },
   { title: "아이", description: "장난감도서관, 어린이미술관, 아동친화시설", icon: Sparkles },
