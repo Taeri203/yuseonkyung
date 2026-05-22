@@ -8,13 +8,12 @@ import { cn } from "@/lib/utils";
 
 const categoryColor: Record<string, string> = {
   환경: "bg-[#0F766E]",
-  공공부지: "bg-[#6B3FA0]",
-  배리어프리: "bg-[#1D4ED8]",
+  공간: "bg-[#6B3FA0]",
+  보행: "bg-[#1D4ED8]",
   청년: "bg-[#1434A4]",
-  이주민: "bg-[#B45309]",
   아동: "bg-[#FFD84D]",
-  행정: "bg-[#0B1F66]",
   안전: "bg-[#DC2626]",
+  노동: "bg-[#B45309]",
 };
 
 export function StaticMap({ preview = false }: { preview?: boolean }) {
@@ -22,8 +21,6 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
   const [selected, setSelected] = useState(mapMarkers[0]);
   const markers = useMemo(() => {
     if (category === "전체") return mapMarkers;
-    if (category === "청년") return mapMarkers.filter((marker) => marker.category === "청년" || marker.title.includes("산업단지"));
-    if (category === "이주민") return mapMarkers.filter((marker) => marker.category === "이주민");
     return mapMarkers.filter((marker) => marker.category === category);
   }, [category]);
   const visibleMarkers = markers;
@@ -31,13 +28,7 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
 
   function handleCategoryChange(nextCategory: MapCategory) {
     setCategory(nextCategory);
-    const nextMarkers = nextCategory === "전체"
-      ? mapMarkers
-      : nextCategory === "청년"
-        ? mapMarkers.filter((marker) => marker.category === "청년" || marker.title.includes("산업단지"))
-        : nextCategory === "이주민"
-          ? mapMarkers.filter((marker) => marker.category === "이주민")
-          : mapMarkers.filter((marker) => marker.category === nextCategory);
+    const nextMarkers = nextCategory === "전체" ? mapMarkers : mapMarkers.filter((marker) => marker.category === nextCategory);
     setSelected(nextMarkers[0] || mapMarkers[0]);
   }
 
@@ -95,23 +86,23 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
           <div className="pointer-events-none absolute inset-0 z-10 hidden md:block" aria-hidden>
             <div className="absolute left-[16.8%] top-[39%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
               <p className="text-xl font-black text-[#0B1F66]">신당동</p>
-              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">산단·계명대·공존</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">환경·시유지·노동</p>
             </div>
             <div className="absolute left-[50.3%] top-[39%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
               <p className="text-xl font-black text-[#0B1F66]">이곡2동</p>
-              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">역세권·공공부지</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">안전·청년·주거</p>
             </div>
             <div className="absolute left-[80.5%] top-[41%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white/84 px-3 py-2 text-center shadow-md backdrop-blur">
               <p className="text-xl font-black text-[#0B1F66]">이곡1동</p>
-              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">행정·교육·아동</p>
+              <p className="mt-0.5 text-[11px] font-extrabold text-[#344054]">환경·보행</p>
             </div>
           </div>
         </div>
         <div className="mt-3 grid grid-cols-3 gap-2 md:hidden" aria-label="성서 생활권 범례">
           {[
-            ["신당동", "산단·계명대"],
-            ["이곡2동", "역세권·공공부지"],
-            ["이곡1동", "행정·교육"],
+            ["신당동", "환경·시유지"],
+            ["이곡2동", "안전·청년"],
+            ["이곡1동", "환경·보행"],
           ].map(([name, detail]) => (
             <div key={name} className="rounded-2xl border border-[#D7E4FF] bg-white px-2.5 py-2 text-center shadow-sm">
               <p className="text-sm font-black text-[#0B1F66]">{name}</p>
@@ -125,7 +116,7 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
           <p className="mt-2 text-sm leading-6 text-[#667085]">{selected.issue}</p>
           <p className="mt-2 text-sm font-bold leading-6 text-[#344054]">{selected.pledge}</p>
         </div>
-        <p className="mt-4 text-sm leading-6 text-[#667085]">정확한 행정경계보다 성서 생활권의 핵심 현안과 공약 흐름을 한눈에 이해할 수 있도록 정리했습니다.</p>
+        <p className="mt-4 text-sm leading-6 text-[#667085]">정확한 행정경계보다 선거공보의 핵심공약과 생활권 현안을 한눈에 이해할 수 있도록 정리했습니다.</p>
       </div>
       <div className={cn("grid gap-3 overflow-auto pr-1", listHeightClass)}>
         {visibleMarkers.map((marker) => <MarkerCard key={marker.title} marker={marker} />)}

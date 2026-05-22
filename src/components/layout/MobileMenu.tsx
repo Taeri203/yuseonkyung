@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/site";
 
 const menuLinks = [
   { label: "후보 소개", href: "/about" },
-  { label: "5대 의제", href: "/pledges" },
+  { label: "5가지 공약", href: "/pledges" },
   { label: "동별 공약", href: "/districts" },
   { label: "세대별 공약", href: "/generations" },
   { label: "공약지도", href: "/map" },

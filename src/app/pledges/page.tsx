@@ -9,7 +9,7 @@ import { agendaThemes, agendas } from "@/data/agendas";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "성서를 위한 5대 의제 | 유선경.kr",
+  title: "우리 동네를 위한 5가지 공약 | 유선경.kr",
 };
 
 export default function PledgesPage() {
@@ -18,7 +18,7 @@ export default function PledgesPage() {
       <section className="campaign-gradient py-16">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_.7fr] lg:items-center">
-            <SectionTitle eyebrow="성서를 위한 5대 의제" title="환경, 공간, 이동권, 공존, 아이의 미래까지" description="유선경은 성서의 오래된 숙제를 생활 속에서 풀겠습니다." />
+            <SectionTitle eyebrow="핵심공약" title="우리 동네를 위한 5가지 공약" description="이곡동과 신당동을 이렇게 바꾸겠습니다. 아래 내용은 선거공보를 기준으로 정리했습니다." />
             <CandidateVisualFrame
               src={siteConfig.images.heroCutout}
               alt="달서구의원 후보 유선경 공식 프로필 사진"
@@ -31,7 +31,7 @@ export default function PledgesPage() {
 
       <section className="py-16">
         <Container>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {agendaThemes.map((theme) => (
               <article key={theme.title} className="rounded-[1.5rem] border border-[#E5E7EB] bg-white p-6 shadow-sm">
                 <span className="rounded-full bg-[#FFD84D] px-3 py-1 text-sm font-black text-[#0B1F66]">{theme.title}</span>
@@ -46,10 +46,10 @@ export default function PledgesPage() {
             {agendas.map((agenda) => <PledgeCard key={agenda.id} agenda={agenda} />)}
           </div>
           <div className="mt-9 rounded-[2rem] bg-[#EAF2FF] p-6 text-center">
-            <p className="text-xl font-black text-[#0B1F66]">공약은 주민의 제보로 계속 업데이트됩니다.</p>
+            <p className="text-xl font-black text-[#0B1F66]">생활권별 공약은 공약지도와 동별 안내에서도 확인할 수 있습니다.</p>
             <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
               <Link href="/map" className="btn-base btn-primary">공약지도 보기</Link>
-              <Link href="/voice" className="btn-base btn-white">의견 남기기</Link>
+              <Link href="/districts" className="btn-base btn-white">동별 공약 보기</Link>
             </div>
           </div>
         </Container>

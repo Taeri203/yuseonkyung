@@ -28,7 +28,7 @@ export const siteConfig = {
 
 export const navItems: NavItem[] = [
   { label: "유선경 소개", href: "/about" },
-  { label: "5대 의제", href: "/pledges" },
+  { label: "5가지 공약", href: "/pledges" },
   { label: "동별 공약", href: "/districts" },
   { label: "세대별 공약", href: "/generations" },
   { label: "공약지도", href: "/map" },
@@ -39,5 +39,5 @@ export const navItems: NavItem[] = [
 
 export const defaultSeo = {
   title: "유선경.kr | 공감과 실력, 당당한 달서",
-  description: "더불어민주당 유선경 달서구의원선거 다 선거구 후보의 성서 5대 의제, 이곡1동·이곡2동·신당동 생활공약, 후원 안내와 유권자의 소리를 확인하세요.",
+  description: "더불어민주당 유선경 달서구의원선거 다 선거구 후보의 5가지 핵심공약, 이곡1동·이곡2동·신당동 생활공약, 후원 안내와 유권자의 소리를 확인하세요.",
 };

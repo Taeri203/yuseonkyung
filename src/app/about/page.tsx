@@ -42,7 +42,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link href="/pledges" className="btn-base btn-primary">유선경의 5대 의제 보기</Link>
+                <Link href="/pledges" className="btn-base btn-primary">5가지 공약 보기</Link>
                 <Link href="/voice" className="btn-base btn-white">의견남기기</Link>
               </div>
             </div>

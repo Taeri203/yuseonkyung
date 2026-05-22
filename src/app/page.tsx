@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Ear, Gauge, HandHeart, Leaf, Map, MessageSquareText, Rocket, ShieldCheck, Sparkles, UsersRound } from "lucide-react";
+import { ArrowRight, Baby, Building2, Ear, Footprints, Gauge, Leaf, MessageSquareText, Rocket, ShieldCheck } from "lucide-react";
 import { AgendaCard } from "@/components/cards/AgendaCard";
 import { FeatureCard } from "@/components/cards/FeatureCard";
 import { DonationInfoCard } from "@/components/cards/DonationInfoCard";
@@ -21,11 +21,11 @@ const identityCards = [
 ];
 
 const problems = [
-  { title: "환경", description: "성서소각장, 방천매립장 악취", icon: Leaf },
-  { title: "공공부지", description: "호산중학교 부지, 유휴 공공부지 활용", icon: Map },
-  { title: "보행약자", description: "장애인·노약자·아동 이동권", icon: HandHeart },
-  { title: "공존", description: "이주민과 정주민의 사회통합", icon: UsersRound },
-  { title: "아이", description: "장난감도서관, 어린이미술관, 아동친화시설", icon: Sparkles },
+  { title: "환경", description: "숨쉬기 좋은 성서", icon: Leaf },
+  { title: "공간", description: "성서산업단지역 시유지", icon: Building2 },
+  { title: "보행", description: "걸어 다니기 좋은 성서", icon: Footprints },
+  { title: "청년", description: "든든한 성서", icon: Rocket },
+  { title: "아이", description: "아이 키우기 좋은 성서", icon: Baby },
 ];
 
 const actionSteps = ["현장에서 듣기", "자료로 확인하기", "의회에서 묻기", "예산으로 점검하기"];
@@ -49,7 +49,7 @@ export default function Home() {
       <section className="bg-[#F8FAFC] py-11 md:py-16">
         <Container>
           <ScrollReveal>
-            <SectionTitle eyebrow="성서 생활 의제" title="성서의 문제는 생활 속에 있습니다" description="환경, 공간, 이동권, 공존, 아이의 미래까지 주민이 매일 마주하는 문제에서 공약을 시작합니다." />
+            <SectionTitle eyebrow="우리 동네를 위한 5가지 공약" title="이곡동과 신당동을 이렇게 바꾸겠습니다" description="숨쉬기 좋은 성서부터 아이 키우기 좋은 성서까지, 선거공보의 핵심공약을 중심으로 안내합니다." />
             <div className="mt-6 grid gap-3 md:mt-9 md:grid-cols-2 md:gap-5 lg:grid-cols-5">
               {problems.map((card, index) => <ScrollReveal key={card.title} delay={index * 60}><FeatureCard {...card} compact /></ScrollReveal>)}
             </div>
@@ -61,7 +61,7 @@ export default function Home() {
         <Container>
           <ScrollReveal>
             <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-              <SectionTitle eyebrow="5대 의제" title="성서를 위한 5대 의제" description="구의원 후보답게 성서 생활권의 문제를 구체적인 의회 질문과 예산 점검으로 연결하겠습니다." />
+              <SectionTitle eyebrow="핵심공약" title="우리 동네를 위한 5가지 공약" description="환경, 공간, 보행, 청년, 아이의 미래까지 선거공보에 담긴 약속을 성서 생활권에 맞게 추진하겠습니다." />
               <Link href="/pledges" className="btn-base btn-primary self-start md:self-auto">전체 보기 <ArrowRight className="h-5 w-5" aria-hidden /></Link>
             </div>
             <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

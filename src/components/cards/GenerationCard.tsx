@@ -2,11 +2,10 @@ import type { Generation } from "@/types";
 
 const toneMap: Record<string, string> = {
   청년: "from-[#1434A4] to-[#1D4ED8]",
-  여성: "from-[#6B3FA0] to-[#1D4ED8]",
+  "여성·가족": "from-[#6B3FA0] to-[#1D4ED8]",
   "아이·학부모": "from-[#0F766E] to-[#1D4ED8]",
-  "장애인·어르신·보행약자": "from-[#0B1F66] to-[#1434A4]",
-  "이주민·정주민": "from-[#B45309] to-[#0F766E]",
-  "소상공인·상권": "from-[#1434A4] to-[#0F766E]",
+  "어르신·장애인": "from-[#0B1F66] to-[#1434A4]",
+  "노동·이주민": "from-[#B45309] to-[#0F766E]",
 };
 
 export function GenerationCard({ item }: { item: Generation }) {

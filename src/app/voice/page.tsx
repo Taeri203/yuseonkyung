@@ -17,7 +17,7 @@ export default function VoicePage() {
       <section className="campaign-gradient py-16">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_.75fr] lg:items-center">
-            <SectionTitle eyebrow="유권자의 소리" title="성서의 환경, 보행, 돌봄, 청년, 이주민, 공공부지 의견을 남겨주세요" description="작은 제보도 모이면 공약이 되고, 현장점검의 출발점이 됩니다." />
+            <SectionTitle eyebrow="유권자의 소리" title="성서의 환경, 공간, 보행, 돌봄, 청년, 노동 의견을 남겨주세요" description="생활 속 의견은 현장 점검과 의정 활동의 중요한 출발점이 됩니다." />
             <div className="rounded-[2rem] bg-white p-3 shadow-xl">
               <ImageWithFallback src={siteConfig.images.fieldSign} alt="거리에서 피켓을 들고 주민을 만나는 유선경 후보" className="rounded-[1.5rem]" sizes="(min-width: 1024px) 420px, 100vw" preset="portrait" />
             </div>

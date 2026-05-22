@@ -27,7 +27,7 @@ export type Generation = {
   icon: LucideIcon;
 };
 
-export type MapCategory = "전체" | "환경" | "공공부지" | "배리어프리" | "청년" | "이주민" | "아동" | "행정" | "안전";
+export type MapCategory = "전체" | "환경" | "공간" | "보행" | "청년" | "아동" | "안전" | "노동";
 
 export type MapMarker = {
   title: string;

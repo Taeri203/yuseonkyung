@@ -28,7 +28,7 @@ export function HeroSection() {
             이곡1동·이곡2동·신당동, 성서의 오래된 숙제를 젊은 추진력과 소통의 실력으로 풀겠습니다.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 md:mt-7 md:gap-3">
-            <Link href="/pledges" className="btn-base btn-primary px-4 py-3 text-sm md:px-6 md:py-4 md:text-base">성서 5대 의제 보기 <ArrowRight className="h-4 w-4 md:h-5 md:w-5" aria-hidden /></Link>
+            <Link href="/pledges" className="btn-base btn-primary px-4 py-3 text-sm md:px-6 md:py-4 md:text-base">5가지 공약 보기 <ArrowRight className="h-4 w-4 md:h-5 md:w-5" aria-hidden /></Link>
             <Link href="/map" className="btn-base btn-white px-4 py-3 text-sm md:px-6 md:py-4 md:text-base">우리동네 공약지도</Link>
             <Link href="/donation" className="btn-base btn-yellow px-4 py-3 text-sm md:px-6 md:py-4 md:text-base">후원 안내</Link>
             <Link href="/voice" className="btn-base btn-dark px-4 py-3 text-sm md:px-6 md:py-4 md:text-base">의견 남기기</Link>
@@ -38,7 +38,7 @@ export function HeroSection() {
           </div>
           <div className="mt-5 grid grid-cols-3 gap-2 md:mt-8 md:gap-3">
             {[
-              ["5대", "성서 생활 의제"],
+              ["5가지", "핵심공약"],
               ["3동", "이곡1·2·신당"],
               ["현장", "주민 의견 기반"],
             ].map(([value, label]) => (

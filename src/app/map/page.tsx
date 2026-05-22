@@ -14,7 +14,7 @@ export default function MapPage() {
     <>
       <section className="campaign-gradient py-16">
         <Container>
-          <SectionTitle eyebrow="우리동네 공약지도" title="성서의 핵심 현안을 한눈에 보는 공약지도" description="이곡1동·이곡2동·신당동을 세 구역으로 나누고, 환경·공공부지·보행·청년·이주민·아동 의제를 함께 정리했습니다." align="center" />
+          <SectionTitle eyebrow="우리동네 공약지도" title="성서의 핵심 현안을 한눈에 보는 공약지도" description="선거공보의 핵심공약과 생활권별 현안을 이곡1동·이곡2동·신당동 중심으로 정리했습니다." align="center" />
         </Container>
       </section>
       <section className="py-16">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CheckCircle2, Send, X } from "lucide-react";
 
 const residenceOptions = ["이곡1동", "이곡2동", "신당동", "기타"];
-const fieldOptions = ["환경", "공공부지", "보행·안전", "청년", "여성·인권", "아동·돌봄", "이주민·다문화", "행정·소통", "기타"];
+const fieldOptions = ["환경", "공간·시유지", "보행·안전", "청년·주거", "아동·돌봄", "노동·어울림", "소통·의정", "기타"];
 
 export function VoiceForm() {
   const [open, setOpen] = useState(false);
